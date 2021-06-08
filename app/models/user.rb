@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :celebrities
-  has_many :reservations
+  has_many :celebrities, dependent: :destroy
+  has_many :reservations, dependent: :destroy
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :role, inclusion: { in: %w(provider consumer) }
 end
