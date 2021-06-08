@@ -1,0 +1,5 @@
+<h1>All our celebrities:</h1>
+<% @celebrities.each do |celebrity| %>
+<p><%= celebrity.first_name %> <%= celebrity.last_name %> - <%= link_to 'See more', celebrity_path(celebrity.id) %></p>
+<% end %>
+
