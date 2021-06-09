@@ -1,0 +1,11 @@
+<div class="container">
+        <h4 class="name">DASHBOARD</h4>
+
+        <p class="desc">Hello <%= current_user.first_name.capitalize %> !</p>
+        <ul class="nav">
+          <li class="button">Reservations</strong> </li>
+          <li class="button">Reviews</strong> </li>
+          <li class="button">My celebrities</strong> </li>
+          <li class="button"><%= link_to "New Celebrity", new_celebrity_path %></strong> </li>
+        </ul>
+</div>

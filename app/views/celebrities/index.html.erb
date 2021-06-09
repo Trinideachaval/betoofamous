@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class="p-3 my-3">
   <div class="card-body col-6">
     <div class="card-info d-flex">
@@ -12,5 +13,30 @@
       <% end %>
     <% end %>
     </div>
+=======
+<div class="col-8 pt-5 mt-5 container">
+  <h1 class="text-center mb-3" id="logo-font">Your celebrities</h1>
+  <div class="cards">
+    <% @celebrities.each do |celebrity| %>
+    <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
+    <div class="celebrity-conteiner">
+      <div class="card-celebrity-body">
+        <div>
+          <div class="card-celebrity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.hola.com/imagenes/biografias/michael-jackson/79629-jackson10.jpg)"></div>
+          <p class="text-center logo-font my-1 no-deco"><%= "#{celebrity.first_name} #{celebrity.last_name}" %></p>
+          <p class="text-center my-1 no-deco">150€/hour</p>
+          <ul class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+>>>>>>> 94b00dfe756cc6c5fc04d0b377287057532db3f5
   </div>
 </div>

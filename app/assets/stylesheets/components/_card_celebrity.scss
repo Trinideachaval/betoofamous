@@ -24,7 +24,7 @@
 }
 
 .card-celebrity-body {
-  width: 20%;
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -34,7 +34,7 @@
 
 .celebrity-conteiner {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .stars {
