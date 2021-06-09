@@ -1,30 +1,35 @@
-html,body {
-  background: #efefef;
-  font-family: "Arial";
+
+
+.button {
+  border-radius: 4px;
+  background-color: #bb0136;
+  padding: 12px 42px;
+  font-size: 14px;
 }
 
 .container {
+  padding: 10px;
   max-width: 1250px;
   margin: 100px;
   width: 90%;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
+  border-radius: 25px;
+  justify-content: center;
 }
 
-.left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+
 
 .name {
   margin-top: 20px;
   font-family: "Open Sans";
   font-weight: 600;
-  font-size: 18pt;
-  color: #777;
+  font-size: 30pt;
+  color: #black;
+text-align: center;
 }
+
+
 
 .desc {
   text-align: center;
@@ -40,11 +45,13 @@ html,body {
 
 
 .nav li {
-  margin: 40px 30px 0 10px;
   cursor: pointer;
   font-size: 13pt;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #888;
+  margin-left: auto;
+  margin-right: auto;
+
 }
