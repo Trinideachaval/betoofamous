@@ -1,0 +1,26 @@
+.map {
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95777.33906373222!2d2.0787281749528796!3d41.394897593327535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona!5e0!3m2!1ses-419!2ses!4v1623245203814!5m2!1ses-419!2ses");
+}
+
+.map h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 48px;
+  font-weight: lighter;
+}
+
+.banner p {
+  font-size: 32px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: roboto;
+}
