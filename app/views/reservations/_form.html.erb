@@ -1,0 +1,12 @@
+
+<%= simple_form_for @reservation do |f| %>
+  <div class="form-group">
+    <%= f.input :reserve_begin %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :reserve_end %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
