@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
