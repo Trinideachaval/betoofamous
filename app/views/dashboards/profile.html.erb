@@ -8,4 +8,29 @@
           <li class="button">My celebrities</strong> </li>
           <li class="button"><%= link_to "New Celebrity", new_celebrity_path %></strong> </li>
         </ul>
+
+<div class="col-8 pt-5 mt-5 container">
+  <h1 class="text-center mb-5" id="logo-font">These are your celebrities</h1>
+  <div class="cards">
+    <% current_user.celebrities.each do |celebrity| %>
+    <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
+    <div class="celebrity-conteiner">
+      <div class="card-celebrity-body">
+        <div>
+          <div class="card-celebrity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= celebrity.photo_url %>)"></div>
+          <p class="text-center logo-font my-1 no-deco"><%= "#{celebrity.first_name} #{celebrity.last_name}" %></p>
+          <p class="text-center my-1 no-deco">150€/hour</p>
+          <ul class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
