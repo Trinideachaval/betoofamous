@@ -1,14 +1,30 @@
 .celebrity-photo-show {
   border-radius: 12px;
-  width: 100px;
+  width: 400px;
   height: 500px;
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("https://www.elmueble.com/medio/2020/08/17/miley-cyrus-instagram_62ddc5ad_1080x1274.jpg");
   background-size: cover;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
+  margin-right: 16px;
+  margin-left: 8px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
 }
 
-.celebrity-photo-show:hover { transform: scale(1.05);}
+.celebrity-photo {
+  margin: 8%;
+}
+
+.celebrity-description {
+  margin-left: 32px;
+  margin-right: 100px;
+}
+
+.celebrity-photo-show:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+  transition: all 0.3s;
+}
 
 /// display: block !important;
     // height: 100% !important;
