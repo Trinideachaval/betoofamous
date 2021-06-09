@@ -30,6 +30,8 @@
 
 .card-container {
   border-radius: 0;
+  display: flex;
+  align-items: center;
 }
 
 .card-title {
@@ -53,4 +55,17 @@
   border-radius: 8px;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 
+.no-deco {
+  text-decoration: none;
+  color: black;
+}
+
+.no-deco:hover {
+  text-decoration: none;
+}
