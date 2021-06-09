@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-a      if @reservation.save!
+      if @reservation.save!
         redirect_to celebrities_path
       else
         render :new
