@@ -14,9 +14,14 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 0px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
 }
+
+
 .card-category:hover  {
-  transform: scale(1.1);
+ filter: grayscale(0%);
+ transition: all 0.3s;
 }
 
 .text-center:hover {
