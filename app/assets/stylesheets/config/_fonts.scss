@@ -3,7 +3,7 @@
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$headers-font: "Abril Fatface", "Abril Fatface", "cursive";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -17,14 +17,13 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 #logo-font {
   font-family: 'Abril Fatface', cursive;
-  color: rgb(241, 3, 71);
   font-weight: lighter;
 }
 
-#logo-font-w {
-  font-family: 'Abril Fatface', cursive;
-  color: white;
-  font-weight: lighter;
-  padding: 16px;
-}
+// #logo-font-w {
+//   font-family: 'Abril Fatface', cursive;
+//   color: white;
+//   font-weight: lighter;
+//   padding: 16px;
+// }
 
