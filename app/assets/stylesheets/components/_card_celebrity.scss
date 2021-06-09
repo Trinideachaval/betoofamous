@@ -1,4 +1,4 @@
-.card-category {
+.card-celebrity {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -13,37 +13,35 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 0px;
+  margin-top: 8px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
 }
 
-.card-container {
-/*  display: flex;
-  justify-content: space-around;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 0px auto;
-  width: 100%;*/
-  border-radius: 0;
+.card-celebrity:hover {
+  filter: grayscale(0%);
+  transition: all 0.3s;
 }
 
-.card-title {
-  background-color: $gray;
-  color: white;
-  margin: 0px;
-  border-radius: 8px 8px 0 0;
-  height: 3em;
-
-} h3 {
-  margin: 0;
-  text-align: center;
-}
-
-.card-body {
+.card-celebrity-body {
+  width: 20%;
   display: flex;
   justify-content: space-around;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 0px auto 20px;
-  width: 100%;
   border-radius: 8px;
 }
 
+.celebrity-conteiner {
+  display: flex;
+  justify-content: space-around;
+}
 
+.stars {
+  margin-bottom: 2px;
+  position: relative;
+  top: -5px;
+  left: 105px;
+  font-size:8px;
+  color: rgb(241, 3, 71);
+}
