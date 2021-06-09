@@ -1,16 +1,14 @@
-
-<div class="p-3 my-3">
-  <div class="card-body col-6">
-    <div class="card-info d-flex">
-      <% @celebrities.each do |celebrity| %>
-
-        <%= link_to celebrity_path(celebrity.id) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://okdiario.com/img/2017/12/28/quien-fue-elvis-presley-el-rey-del-rock-and-roll-2-655x368.jpg)">
-        </div>
-        <p class="text-center logo-font my-1"><%= celebrity.first_name %><%= celebrity.last_name %></p>
-        <p class="text-center my-1">200€/hour</p>
-      <% end %>
-    <% end %>
-    </div>
+<div class="container">
+  <div class="cards">
+        <% @celebrities.each do |celebrity| %>
+          <%= link_to celebrity_path(celebrity.id) do %>
+            <div class="card-info pl-5">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://okdiario.com/img/2017/12/28/quien-fue-elvis-presley-el-rey-del-rock-and-roll-2-655x368.jpg)">
+              </div>
+              <p class="text-center logo-font my-1"><%= celebrity.first_name %><%= celebrity.last_name %></p>
+              <p class="text-center my-1">200€/hour</p>
+            </div>
+          <% end %>
+        <% end %>
   </div>
 </div>
