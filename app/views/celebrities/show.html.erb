@@ -4,7 +4,7 @@
 
   <div class="celebrity-description">
     <h1 class="mb-5"><%=@celebrity.first_name%> <%=@celebrity.last_name%></h1>
-    <p><%=@celebrity.city %></p>
+    <p><%=@celebrity.address %></p>
     <p class="text-justify"><%= @celebrity.description %></p>
     <button class="button text-center text-white">
       <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
