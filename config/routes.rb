@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :celebrities do
     resources :reservations, only: [ :new, :create, :show, :update, :edit]
-  end
+    end
+    resources :reservations, only: [ :show] do
+      resources :reviews, only: [:create, :new]
+    end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/pages/components', to: 'pages#components', as: :components
   get '/dashboard', to: 'dashboards#profile', as: :profile
