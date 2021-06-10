@@ -1,1 +1,17 @@
-<h1>Reservation Confirmed!</h1>
+<div class="celebrity-photo d-flex">
+  <div class="celebrity-photo-show" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%=@reservation.celebrity.photo_url%>');">
+  </div>
+
+  <div class="celebrity-description">
+    <h1>Your Reservation:</h1>
+    <h2><%=@reservation.celebrity.first_name %> <%=@reservation.celebrity.last_name %></h2>
+    <p>From: <%=@reservation.reserve_begin%></p>
+    <p>To: <%=@reservation.reserve_end%></p>
+    <p><strong>Status:</strong><%=@reservation.status %></p>
+  </div>
+</div>
+
+<%= link_to celebrities_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+

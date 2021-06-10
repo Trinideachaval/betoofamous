@@ -1,5 +1,5 @@
 
-<%= simple_form_for @reservation do |f| %>
+<%= simple_form_for [ @celebrity, @reservation ] do |f| %>
   <div class="form-group">
     <%= f.input :reserve_begin %>
   </div>
@@ -8,5 +8,5 @@
     <%= f.input :reserve_end %>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit "Submit reservation",class: 'btn btn-primary' %>
 <% end %>
