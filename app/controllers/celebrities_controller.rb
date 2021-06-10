@@ -1,7 +1,11 @@
 class CelebritiesController < ApplicationController
 
   def index
-    @celebrities = Celebrity.all
+    if params[:query].present?
+      @celebrities = Celebrity.search_by_first_name_last_name_and_city(params[:query])
+    else
+      @celebrities = Celebrity.all
+    end
   end
 
   def show
@@ -36,4 +40,5 @@ class CelebritiesController < ApplicationController
   def celebrity_params
     params.require(:celebrity).permit(:first_name, :last_name, :city, :description, :photo_url)
   end
+
 end

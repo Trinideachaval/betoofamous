@@ -10,6 +10,16 @@
   </span>
 </div>
 
+<%= form_tag celebrities_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
 <div class="col-8 pt-5 mt-5 container">
   <h1 class="text-center mb-5" id="logo-font">Choose your favourite celebrity</h1>
   <div class="cards">
