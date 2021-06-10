@@ -9,6 +9,13 @@
     <button class="button text-center text-white">
       <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
     </button>
+    <button class="button text-center text-white">
+      <%= link_to 'Edit', edit_celebrity_path, class: "no-deco" %>
+    </button>
+    <button class="button text-center text-white">
+      <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" } %>
+    </button>
+
   </div>
 </div>
 

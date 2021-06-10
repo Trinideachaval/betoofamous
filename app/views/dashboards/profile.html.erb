@@ -47,7 +47,6 @@
 <h1>Your Reservations:</h1>
 <% if current_user.celebrities  %>
     <p>Soy un manager y puedo editar una reserva</p>
-
 <% else  %>
   <% current_user.reservations.each do |reservation| %>
     <div class="celebrity-description">
