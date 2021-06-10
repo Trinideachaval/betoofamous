@@ -17,6 +17,8 @@ class CelebritiesController < ApplicationController
 
   def show
     @celebrity = Celebrity.find(params[:id])
+    @reservations = @celebrity.reservations
+
   end
 
   def new
