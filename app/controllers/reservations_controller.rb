@@ -5,6 +5,21 @@ class ReservationsController < ApplicationController
     @celebrity = Celebrity.find(params[:celebrity_id])
   end
 
+
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update(reservation_params)
+      redirect_to profile_path
+    else
+      render :dashboard
+    end
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @celebrity = Celebrity.find(params[:celebrity_id])
