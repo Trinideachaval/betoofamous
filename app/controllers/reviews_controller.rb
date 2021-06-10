@@ -1,0 +1,22 @@
+class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+    @celebrity = Celebrity.find(params[:celebrity_id])
+  end
+
+  def create
+    @review = Review.new(review_params)
+    @reservation = Reservation.find(params[:reservation_id])
+    if @review.save
+      redirect_to profile_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:content, :rating)
+  end
+end
