@@ -1,13 +1,13 @@
 <div class="container">
-        <h4 class="name">            </h4>
+  <h4 class="name">            </h4>
 
 
-        <ul class="nav">
-          <li> <%= link_to "Reservations", new_celebrity_path, class:"button" %>  </li>
-          <li> <%= link_to "Reviews", new_celebrity_path, class:"button"%>  </li>
-          <li> <%= link_to "My celebrities", new_celebrity_path, class:"button" %>  </li>
-          <li><%= link_to "New Celebrity", new_celebrity_path, class:"button" %> </li>
-        </ul>
+  <ul class="nav">
+    <li> <%= link_to "Reservations", new_celebrity_path, class:"button" %>  </li>
+    <li> <%= link_to "Reviews", new_celebrity_path, class:"button"%>  </li>
+    <li> <%= link_to "My celebrities", new_celebrity_path, class:"button" %>  </li>
+    <li><%= link_to "New Celebrity", new_celebrity_path, class:"button" %> </li>
+  </ul>
 </div>
 
 <div class="col-8 pt-5 mt-5 container">
@@ -35,3 +35,22 @@
     <% end %>
   </div>
 </div>
+</div>
+
+<h1>Your Reservations:</h1>
+<% current_user.reservations.each do |reservation| %>
+  <div class="celebrity-description">
+    <h2><%= reservation.user.first_name %> <%= reservation.user.last_name %></h2>
+    <p>From: <%= reservation.reserve_begin%></p>
+    <p>To: <%= reservation.reserve_end%></p>
+    <p><strong>Status:</strong><%= reservation.status %></p>
+  </div>
+<% end %>
+
+
+<% if current_user.celibrities %>
+  <h1>Soy manager</h1>
+<% else %>
+  <h1>Soy user normal</h1>
+<% end %>
+
