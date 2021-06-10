@@ -40,7 +40,7 @@
     <h2><%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></h2>
     <p>From: <%= reservation.reserve_begin%></p>
     <p>To: <%= reservation.reserve_end%></p>
-    <p><strong>Status:</strong><%= reservation.status %></p>
+    <p><strong>Status: </strong><%= reservation.status.capitalize %></p>
   </div>
 <% end %>
 
