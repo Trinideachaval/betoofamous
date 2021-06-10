@@ -11,7 +11,6 @@ Reservation.destroy_all
 Celebrity.destroy_all
 User.destroy_all
 
-
 10.times do
   user = User.new(
     email: Faker::Internet.email,
@@ -25,17 +24,13 @@ end
   celebrity = Celebrity.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    city: Faker::Address.city,
+    address: Faker::Address.city, #city no existe en la base de datos
     description: Faker::Demographic.race,
     photo_url: 'https://picsum.photos/200/300',
     user_id: User.all.sample.id
   )
   celebrity.save(validate: false)
 end
-
-
-
-
 
 statux = ['confirmed', 'pending']
 10.times do
@@ -57,5 +52,3 @@ end
   )
   review.save(validate: false)
 end
-
-

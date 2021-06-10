@@ -28,13 +28,13 @@ class CelebritiesController < ApplicationController
 
   def create
     @celebrity = Celebrity.new(celebrity_params)
-    # @celebrity.user = current_user
-    authorize @celebrity
+    @celebrity.user = current_user
     if @celebrity.save
       redirect_to celebrity_path(@celebrity)
     else
       render :new
     end
+    authorize @celebrity
   end
 
   def edit
@@ -51,6 +51,7 @@ class CelebritiesController < ApplicationController
       render :new
     end
     authorize @celebrity
+    raise
   end
 
   def destroy
