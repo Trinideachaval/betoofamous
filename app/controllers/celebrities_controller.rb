@@ -6,6 +6,13 @@ class CelebritiesController < ApplicationController
     else
       @celebrities = Celebrity.all
     end
+
+    @markers = @celebrities.geocoded.map do |celebrity|
+      {
+        lat: celebrity.latitude,
+        lng: celebrity.longitude
+      }
+    end
   end
 
   def show
@@ -38,7 +45,7 @@ class CelebritiesController < ApplicationController
   private
 
   def celebrity_params
-    params.require(:celebrity).permit(:first_name, :last_name, :adress, :description, :photo_url)
+    params.require(:celebrity).permit(:first_name, :last_name, :address, :description, :photo_url)
   end
 
 end
