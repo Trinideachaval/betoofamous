@@ -6,7 +6,8 @@ class CelebritiesController < ApplicationController
 
   def show
     @celebrity = Celebrity.find(params[:id])
-    @reviews = Review.all
+    @reservations = @celebrity.reservations
+
   end
 
   def new

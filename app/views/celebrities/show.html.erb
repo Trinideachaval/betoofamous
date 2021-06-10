@@ -13,6 +13,8 @@
 </div>
 
 
+
+<% @reservations.each do |reservation| %>
 <div class="d-flex">
   <ul class="stars-for-show-celebrity">
     <i class="fas fa-star"></i>
@@ -24,9 +26,8 @@
   <p class="pl-4 text-muted">A year ago</p>
 </div>
 
-<% @reviews.each do |review| %>
   <div class="pl-3">
-    <p class="pl-4"> <%= review.content %></p>
+    <p class="pl-4"> <%= reservation.review.content %></p>
   </div>
 
   <div class="d-flex mb-5">
