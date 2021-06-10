@@ -4,13 +4,15 @@ class Celebrity < ApplicationRecord
   has_many :reservations
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :city, presence: true
+  validates :adddress, presence: true
   validates :description, presence: true
   validates :photo_url, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
-  pg_search_scope :search_by_first_name_last_name_and_city,
-    against: [ :first_name, :last_name, :city ],
+  pg_search_scope :search_name_and_description,
+    against: [ :first_name, :last_name, :description ],
     using: {
       tsearch: { prefix: true }
     }

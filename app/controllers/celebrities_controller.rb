@@ -2,7 +2,7 @@ class CelebritiesController < ApplicationController
 
   def index
     if params[:query].present?
-      @celebrities = Celebrity.search_by_first_name_last_name_and_city(params[:query])
+      @celebrities = Celebrity.search_name_and_description(params[:query])
     else
       @celebrities = Celebrity.all
     end
@@ -38,7 +38,7 @@ class CelebritiesController < ApplicationController
   private
 
   def celebrity_params
-    params.require(:celebrity).permit(:first_name, :last_name, :city, :description, :photo_url)
+    params.require(:celebrity).permit(:first_name, :last_name, :adress, :description, :photo_url)
   end
 
 end

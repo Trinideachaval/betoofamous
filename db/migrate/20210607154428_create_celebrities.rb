@@ -3,7 +3,7 @@ class CreateCelebrities < ActiveRecord::Migration[6.0]
     create_table :celebrities do |t|
       t.string :first_name
       t.string :last_name
-      t.string :city
+      t.string :address
       t.text :description
       t.string :photo_url
 
