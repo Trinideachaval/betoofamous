@@ -16,19 +16,30 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.new(celebrity_params)
     @celebrity.user = current_user
     if @celebrity.save
-      redirect_to celebrities_path
+      redirect_to celebrity_path(@celebrity)
     else
       render :new
     end
   end
 
   def edit
+    @celebrity = Celebrity.find(params[:id])
   end
 
   def update
+    @celebrity = Celebrity.find(params[:id])
+    @celebrity.update(celebrity_params)
+    if @celebrity.save
+      redirect_to celebrity_path(@celebrity)
+    else
+      render :new
+    end
   end
 
   def destroy
+    @celebrity = Celebrity.find(params[:id])
+    @celebrity.destroy
+    redirect_to profile_path
   end
 
   private
