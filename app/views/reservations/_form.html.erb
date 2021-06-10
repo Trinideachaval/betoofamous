@@ -1,3 +1,6 @@
+<div class="form_container">
+  <h1 class="text-center">When would you like to book? </h1>
+  <div class="container ml-5">
 
 <%= simple_form_for [ @celebrity, @reservation ] do |f| %>
   <div class="form-group">
@@ -6,5 +9,6 @@
   <div class="form-group">
     <%= f.input :reserve_end %>
   </div>
-  <%= f.submit "Submit reservation",class: 'btn btn-primary' %>
+  <%= f.submit "Submit reservation",class: 'btn button' %>
 <% end %>
+</div>
