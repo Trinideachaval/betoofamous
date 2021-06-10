@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  STATUS = %w(confirmed pending rejected cancelled)
+  STATUS = %w(confirmed pending)
   belongs_to :user
   belongs_to :celebrity
   has_one :review, dependent: :destroy
