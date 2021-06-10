@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
 
-def profile
-end
+  def profile
+
+  end
 
 end

@@ -6,15 +6,25 @@
     <h1 class="mb-5"><%=@celebrity.first_name%> <%=@celebrity.last_name%></h1>
     <p><%=@celebrity.address %></p>
     <p class="text-justify"><%= @celebrity.description %></p>
-    <button class="button text-center text-white">
-      <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
-    </button>
-    <button class="button text-center text-white">
-      <%= link_to 'Edit', edit_celebrity_path, class: "no-deco" %>
-    </button>
-    <button class="button text-center text-white">
-      <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" } %>
-    </button>
+
+    <% if policy(@celebrity).update? == false %>
+      <button class="button text-center text-white">
+        <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
+      </button>
+    <% end %>
+
+    <% if policy(@celebrity).update? %>
+      <button class="button text-center text-white">
+        <%= link_to 'Edit', edit_celebrity_path, class: "no-deco" %>
+      </button>
+    <% end %>
+
+    <% if policy(@celebrity).destroy? %>
+      <button class="button text-center text-white">
+        <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" } %>
+      </button>
+    <% end %>
+
   </div>
 </div>
 
