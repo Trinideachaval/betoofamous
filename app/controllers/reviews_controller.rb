@@ -7,7 +7,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @reservation = Reservation.find(params[:reservation_id])
-    if @review.save
+    @review.reservation = @reservation
+    if @review.save!
       redirect_to profile_path
     else
       render :new
