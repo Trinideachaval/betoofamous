@@ -37,7 +37,7 @@ end
 
 
 
-statux = ['confirmed', "cancelled", 'pending', 'reject' ]
+statux = ['confirmed', 'pending']
 10.times do
   reservation = Reservation.new(
     reserve_begin: '20.06.2020',
