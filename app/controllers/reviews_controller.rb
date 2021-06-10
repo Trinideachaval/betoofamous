@@ -1,13 +1,13 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @celebrity = Celebrity.find(params[:celebrity_id])
+    @reservation = Reservation.find(params[:reservation_id])
   end
 
   def create
     @review = Review.new(review_params)
     @reservation = Reservation.find(params[:reservation_id])
-    if @review.save
+    if @review.save!
       redirect_to profile_path
     else
       render :new

@@ -8,6 +8,10 @@
     <p>From: <%=@reservation.reserve_begin%></p>
     <p>To: <%=@reservation.reserve_end%></p>
     <p><strong>Status:</strong><%=@reservation.status %></p>
+    <% if @reservation.status == 'confirmed'%>
+      <%= link_to "Write a review", new_reservation_review_path(@reservation) %>
+    <% end %>
+     </p>
   </div>
 </div>
 
