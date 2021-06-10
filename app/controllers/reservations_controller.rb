@@ -4,6 +4,20 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+  def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update(reservation_params)
+      redirect_to profile_path
+    else
+      render :dashboard
+    end
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
@@ -16,13 +30,6 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
-  end
-
-  def update
-    @reservations = Reservation.all
-    @reservation = Reservation.find(params[:id])
-    @reservation.update(reservation_params)
-    redirect_to profile_path
   end
 
   private
