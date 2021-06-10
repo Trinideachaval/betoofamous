@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   def new
     @reservation = Reservation.new
   end
@@ -15,6 +16,13 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+  end
+
+  def update
+    @reservations = Reservation.all
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(reservation_params)
+    redirect_to profile_path
   end
 
   private
