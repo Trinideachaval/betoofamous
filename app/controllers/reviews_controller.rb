@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @celebrity = Celebrity.find(params[:celebrity_id])
+    @reservation = Reservation.find(params[:reservation_id])
   end
 
   def create
