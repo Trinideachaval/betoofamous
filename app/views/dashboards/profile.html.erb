@@ -8,10 +8,10 @@
         <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path, class:'button' %></a>
       </div>
       <div >
-        <a href="#" class="card-link"><%= link_to "Reservations", new_celebrity_path, class:'button'  %></a>
+        <a href="#" class="card-link"><%= link_to "All Celebrities", celebrities_path, class:'button'  %></a>
       </div>
       <div >
-        <a href="#" class="card-link"><%= link_to "My celebrities", new_celebrity_path, class:'button'  %></a>
+        <a href="#" class="card-link"><a href="#celebrities" class="button"> My celebrities</a>
       </div>
       <div >
         <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
@@ -53,8 +53,7 @@
           <%= link_to "Create celebrity", new_celebrity_path, class:'button' %>
           <%  else %>
           <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! These are your celebrities</h1>
-          <div class="cards">
-
+          <div class="cards" id="celebrities">
             <% current_user.celebrities.each do |celebrity| %>
             <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
             <div class="celebrity-conteiner">
