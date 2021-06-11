@@ -37,12 +37,15 @@
     <i class="fas fa-star"></i>
     <i class="far fa-star"></i>
   </ul>
-  <p class="pl-4 text-muted">A year ago</p>
+  <p class="pl-4 text-muted"> <%= reservation&.created_at %> </p>
 </div>
 
 <div class="pl-3">
-  <p class="pl-4"> <%= reservation.review.content %></p>
-  <% raise %>
+  <p class="pl-4">
+    <% if reservation.review.blank? %>
+
+    <% end %>
+    <%= reservation&.review&.content %></p>
 </div>
 
 <div class="d-flex mb-5">
