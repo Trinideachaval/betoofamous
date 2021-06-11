@@ -5,12 +5,12 @@ class CelebritiesController < ApplicationController
       @celebrities = Celebrity.search_name_and_description(params[:query])
     else
       @celebrities = Celebrity.all
-      @markers = @celebrities.geocoded.map do |celebrity|
+    end
+    @markers = @celebrities.geocoded.map do |celebrity|
       {
         lat: celebrity.latitude,
         lng: celebrity.longitude
       }
-      end
     end
   end
 
