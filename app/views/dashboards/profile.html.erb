@@ -1,39 +1,46 @@
 <div class="celebrity-photo d-flex">
-  <div class="card celebrity-photo-show" style="width: 18rem;">
-    <img class="card-img-top" src="/./images/logo.png" alt="Card image cap">
+  <div class="card celebrity-photo-show sidebar" style="width: 35rem;">
     <div class="card-body">
-      <h5 class="card-title"><%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h5>
+      <h5><%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h5>
     </div>
-    <div class="card-body">
+    <div >
       <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path, class:'button' %></a>
     </div>
-    <div class="card-body">
+    <div >
       <a href="#" class="card-link"><%= link_to "Reservations", new_celebrity_path, class:'button'  %></a>
     </div>
-    <div class="card-body">
+    <div >
       <a href="#" class="card-link"><%= link_to "My celebrities", new_celebrity_path, class:'button'  %></a>
     </div>
+    <div >
+      <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
+    </div>
   </div>
-  <div class="celebrity-description">
-    <h1>Your Reservations:</h1>
-        <% current_user.reservations.each do |reservation| %>
-          <div class="celebrity-description">
-            <h2><%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></h2>
-            <p>From: <%= reservation.reserve_begin%></p>
-            <p>To: <%= reservation.reserve_end%></p>
-            <p> <strong>Status:</strong><%= reservation.status.capitalize %></p>
 
-          </div>
-          <%= link_to "Update Reservation", edit_reservation_path(reservation) %>
-          <br>
-          <br>
-        <% end %>
-  </div>
-</div>
+  <div>
+    <div class="celebrity-description">
+      <h1>Your Reservations:</h1>
+      <% if current_user.reservations.blank? %>
+      <p> <%= "You do not have any reservation yet..." %></p>
+      <% else %>
+          <% current_user.reservations.each do |reservation| %>
+            <div class="celebrity-description">
+              <h2><%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></h2>
+              <p>From: <%= reservation.reserve_begin%></p>
+              <p>To: <%= reservation.reserve_end%></p>
+              <p> <strong>Status:</strong><%= reservation.status.capitalize %></p>
 
+            </div>
+            <%= link_to "Update Reservation", edit_celebrity_reservation_path(reservation.celebrity, reservation) %>
+            <br>
+            <br>
+          <% end %>
+         <% end %>
+    </div>
 
-<% if current_user.celebrities.blank?  %>
-    <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! You do not have any celebrity yet... Would you like to create one ?</h1>
+    <div class="celebrity-description">
+  <% if current_user.celebrities.blank?  %>
+    <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! You do not have any celebrity yet...</h1>
     <p></p>
     <%= link_to "Create celebrity", new_celebrity_path, class:'button' %>
     <%  else %>
@@ -41,6 +48,7 @@
 
    <div class="col-8 pt-5 mt-5 container">
     <div class="cards">
+
       <% current_user.celebrities.each do |celebrity| %>
       <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
       <div class="celebrity-conteiner">
@@ -66,5 +74,11 @@
       <% end %>
     <% end %>
 <% end %>
+  </div>
+
+
+</div>
+
+
 
 
