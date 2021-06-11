@@ -11,8 +11,8 @@ class CelebritiesController < ApplicationController
         lat: celebrity.latitude,
         lng: celebrity.longitude
       }
-      end
-    authorize @celebrities
+      authorize @celebrities
+    end
   end
 
   def show
@@ -51,7 +51,6 @@ class CelebritiesController < ApplicationController
       render :new
     end
     authorize @celebrity
-    raise
   end
 
   def destroy
