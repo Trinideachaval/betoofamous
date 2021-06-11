@@ -8,7 +8,7 @@
         <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path, class:'button' %></a>
       </div>
       <div >
-        <a href="#" class="card-link"><%= link_to "All Celebrities", celebrities_path, class:'button'  %></a>
+        <a href="#" class="card-link"><a href="#reservation" class="button"> Reservations</a>
       </div>
       <div >
         <a href="#" class="card-link"><a href="#celebrities" class="button"> My celebrities</a>
@@ -20,7 +20,7 @@
 
 
     <div class="col-9">
-      <div class="dashboard-content">
+      <div class="dashboard-content" id="reservation">
         <h1>Your Reservations:</h1>
         <% if current_user.reservations.empty? %>
         <p> <%= "You do not have any reservation yet..." %></p>
