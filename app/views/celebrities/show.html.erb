@@ -7,73 +7,21 @@
     <p><%=@celebrity.address %></p>
     <p class="text-justify"><%= @celebrity.description %></p>
     <button class="button text-center text-white">
-      <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
+      <%= link_to 'Book now', new_celebrity_reservation_path(@celebrity), class: "no-deco" %>
     </button>
+    <button class="button text-center text-white">
+      <%= link_to 'Edit', edit_celebrity_path, class: "no-deco" %>
+    </button>
+    <button class="button text-center text-white">
+      <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" } %>
+    </button>
+
   </div>
 </div>
 
-<div class="m-5">
-<div class="d-flex">
-  <ul class="stars-for-show-celebrity">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="far fa-star"></i>
-  </ul>
-  <p class="pl-4 text-muted">A day ago</p>
-</div>
-
-<div class="pl-3">
-  <p class="pl-4"></p>
-</div>
-
-<div class="d-flex mb-5">
-  <i class="far fa-thumbs-up pl-5"></i>
-  <p class="pl-4 text-muted">Like</p>
-</div>
-
-<div class="d-flex">
-  <ul class="stars-for-show-celebrity">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="far fa-star"></i>
-  </ul>
-  <p class="pl-4 text-muted">A week ago</p>
-</div>
-
-<div class="pl-3">
-  <p class="pl-4"> </p>
-</div>
-
-<div class="d-flex mb-5">
-  <i class="far fa-thumbs-up pl-5"></i>
-  <p class="pl-4 text-muted">Like</p>
-</div>
 
 
-<div class="d-flex">
-  <ul class="stars-for-show-celebrity">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="far fa-star"></i>
-  </ul>
-  <p class="pl-4 text-muted">A month ago</p>
-</div>
-
-<div class="pl-3">
-  <p class="pl-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, saepe ullam ex repellat inventore ducimus beatae a mollitia repellendus, possimus voluptatem fugiat consequatur qui optio officiis quaerat temporibus, dicta laborum!</p>
-</div>
-
-<div class="d-flex mb-5">
-  <i class="far fa-thumbs-up pl-5"></i>
-  <p class="pl-4 text-muted">Like</p>
-</div>
-
+<% @reservations.each do |reservation| %>
 <div class="d-flex">
   <ul class="stars-for-show-celebrity">
     <i class="fas fa-star"></i>
@@ -85,19 +33,20 @@
   <p class="pl-4 text-muted">A year ago</p>
 </div>
 
-<div class="pl-3">
-  <p class="pl-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, saepe ullam ex repellat inventore ducimus beatae a mollitia repellendus, possimus voluptatem fugiat consequatur qui optio officiis quaerat temporibus, dicta laborum!</p>
-</div>
+  <div class="pl-3">
+    <p class="pl-4"> <%= reservation.review.content %></p>
+  </div>
 
-<div class="d-flex mb-5">
-  <i class="far fa-thumbs-up pl-5"></i>
-  <p class="pl-4 text-muted">Like</p>
-</div>
+  <div class="d-flex mb-5">
+    <i class="far fa-thumbs-up pl-5"></i>
+    <p class="pl-4 text-muted">Like</p>
+  </div>
 
-<div class="d-flex justify-content-center">
-  <button class="button text-center m-3 text-white">
-  <%= link_to 'See all celebrities', celebrities_path, class: "no-deco"%>
-  </button>
-</div>
+<% end %>
 
-</div>
+  <div class="d-flex justify-content-center">
+    <button class="button text-center m-3 text-white">
+    <%= link_to 'See all celebrities', celebrities_path, class: "no-deco"%>
+    </button>
+  </div>
+

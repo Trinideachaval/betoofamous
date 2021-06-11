@@ -1,13 +1,11 @@
+
 <div class="form_container">
-  <h1 class="text-center">When would you like to book? </h1>
+  <h1 class="text-center">Cancel o approve your reservation here:</h1>
   <div class="container ml-5">
 
 <%= simple_form_for [ @celebrity, @reservation ] do |f| %>
   <div class="form-group">
-    <%= f.input :reserve_begin %>
-  </div>
-  <div class="form-group">
-    <%= f.input :reserve_end %>
+    <%= f.input :status, collection: Reservation::STATUS %>
   </div>
   <%= f.submit "Submit reservation",class: 'btn button' %>
 <% end %>
