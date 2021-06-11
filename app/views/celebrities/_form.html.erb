@@ -1,26 +1,25 @@
 <div class="form_container">
   <h1 class="text-center">Create your celebrity here:</h1>
-  <div class="container ml-5">
-    <%= simple_form_for @celebrity do |f|%>
-      <div class="form-group m-5 p-2">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: 'form-control' %>
-      </div>
+  <%= simple_form_for @celebrity do |f|%>
+    <div class="form-group m-5 p-2">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
 
-      <div class="form-group m-5 p-2">
-        <%= f.label :last_name %>
-        <%= f.text_area :last_name, class: 'form-control' %>
-      </div>
+    <div class="form-group m-5 p-2">
+      <%= f.label :last_name %>
+      <%= f.text_area :last_name, class: 'form-control' %>
+    </div>
 
-      <div class="form-group m-5 p-2">
-        <%= f.label :address %>
-        <%= f.text_area :address, class: 'form-control' %>
-      </div>
+    <div class="form-group m-5 p-2">
+      <%= f.label :address %>
+      <%= f.text_area :address, class: 'form-control' %>
+    </div>
 
-      <div class="form-group m-5 p-2">
-        <%= f.label :description %>
-        <%= f.text_area :description, class: 'form-control' %>
-      </div>
+    <div class="form-group m-5 p-2">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
 
       <div class="form-group m-5 p-2">
         <%= f.label :photo %>
@@ -32,4 +31,9 @@
       </div>
     <% end %>
   </div>
-</div>
+
+    <div class="d-flex justify-content-center mb-5">
+      <%= f.submit class: 'button'%>
+    </div>
+  <% end %>
+
