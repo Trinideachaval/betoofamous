@@ -11,8 +11,8 @@ class CelebritiesController < ApplicationController
         lat: celebrity.latitude,
         lng: celebrity.longitude
       }
-      authorize @celebrities
     end
+    authorize @celebrities
   end
 
   def show
