@@ -25,6 +25,7 @@ gem 'devise'
 gem 'faker'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
+gem 'pundit'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,7 +36,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'faker'
 
 group :development, :test do
   gem 'pry-byebug'
