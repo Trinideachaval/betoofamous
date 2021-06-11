@@ -6,12 +6,25 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-right: 16px;
   margin-left: 8px;
-  filter: grayscale(100%);
-  transition: all 0.3s;
 }
 
-.celebrity-photo {
-  margin: 8%;
+.celebrity-photo,  {
+  margin-left: 16%;
+  margin-right: 16%;
+  margin-top: 16%;
+  margin-bottom: 4%;
+}
+
+.reservations-in-show-celebrity {
+  margin-left: 14.25%;
+  margin-right: 16%;
+  margin-bottom: 4%;
+  margin-top: 4%;
+}
+
+.review-show-celebrity {
+  margin-left: 17%;
+  margin-top: 8%;
 }
 
 .celebrity-description {
@@ -20,9 +33,7 @@
 }
 
 .celebrity-photo-show:hover {
-  transform: scale(1.05);
-  filter: grayscale(0%);
-  transition: all 0.3s;
+  transform: scale(1.01);
 }
 
 /// display: block !important;
