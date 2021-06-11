@@ -39,7 +39,7 @@
         <i class="fas fa-star"></i>
         <i class="far fa-star"></i>
       </ul>
-      <p class="pl-4 text-muted">A year ago</p>
+      <p class="pl-4 text-muted"> <%= reservation&.created_at.strftime("%m/%d/%Y") %></p>
     </div>
 
     <div class="pl-3">
