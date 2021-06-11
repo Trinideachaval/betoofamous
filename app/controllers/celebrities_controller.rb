@@ -51,7 +51,6 @@ class CelebritiesController < ApplicationController
       render :new
     end
     authorize @celebrity
-    raise
   end
 
   def destroy
