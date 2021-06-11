@@ -17,12 +17,12 @@
         <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
       </div>
     </div>
-        
+
     <div class="col-9">
       <div class="dashboard-content">
         <h1>Hello <%= current_user.first_name.capitalize%>! These are your reservations:</h1>
         <% if current_user.reservations.empty? %>
-        <p> Hello <%= current_user.first_name.capitalize%>, you do not have any reservation yet..." </p>
+        <p> You do not have any reservation yet... </p>
         <% else %>
         <div class="cards">
           <% current_user.reservations.each do |reservation| %>
