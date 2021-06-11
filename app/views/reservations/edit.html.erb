@@ -1,12 +1,11 @@
-
 <div class="form_container">
   <h1 class="text-center">Cancel o approve your reservation here:</h1>
-  <div class="container ml-5">
-
-<%= simple_form_for [ @celebrity, @reservation ] do |f| %>
-  <div class="form-group">
+  <%= simple_form_for [ @celebrity, @reservation ] do |f| %>
+  <div class="form-group m-5 p-2">
     <%= f.input :status, collection: Reservation::STATUS %>
   </div>
-  <%= f.submit "Submit reservation",class: 'btn button' %>
-<% end %>
 </div>
+<div class="d-flex justify-content-center mb-5">
+  <%= f.submit "Submit reservation",class: 'btn button' %>
+</div>
+<% end %>
