@@ -7,7 +7,9 @@ class ReservationsController < ApplicationController
 
 
   def edit
-    @restaurant = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
+    @celebrity = Celebrity.find(params[:celebrity_id])
+    @reservation.celebrity = @celebrity
   end
 
   def update
