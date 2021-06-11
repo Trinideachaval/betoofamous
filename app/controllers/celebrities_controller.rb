@@ -30,7 +30,7 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.new(celebrity_params)
     @celebrity.user = current_user
     if @celebrity.save
-      redirect_to celebrity_path(@celebrity)
+      redirect_to profile_path
     else
       render :new
     end
@@ -63,6 +63,6 @@ class CelebritiesController < ApplicationController
   private
 
   def celebrity_params
-    params.require(:celebrity).permit(:first_name, :last_name, :address, :description, :photo_url)
+    params.require(:celebrity).permit(:first_name, :last_name, :address, :description, :photo)
   end
 end
