@@ -2,12 +2,12 @@ class Celebrity < ApplicationRecord
 
   belongs_to :user
   has_many :reservations
+  has_one_attached :photo
   # debería existir la línea "has_many :reviews, through: :reservations"
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true
   validates :description, presence: true
-  validates :photo_url, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
