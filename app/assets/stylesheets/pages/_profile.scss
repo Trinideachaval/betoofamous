@@ -1,8 +1,8 @@
 
 
-.container {
+.mycontainer {
   margin: auto;
-  max-width: 1150px;
+  width: 1150px;
 }
 
 
@@ -22,7 +22,12 @@ text-align: center;
 padding: 50px;
 }
 
-
+.dashboard-content {
+  h1 {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+}
 
 .nav li {
   padding: 30px;
