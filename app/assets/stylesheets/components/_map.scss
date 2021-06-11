@@ -8,7 +8,7 @@
 }
 
 .margin-top {
-  margin: 70px;
+  margin-top: 106px;
   display: flex;
 }
 
@@ -25,13 +25,3 @@
   display:none;
 }
 
-#map-button {
-  border-radius: 4px;
-  background-color: #bb0136;
-  padding: 0px 45px;
-  font-size: 18px !important;
-  color: white;
-  &:hover {
-    color: gray;
-  }
-}

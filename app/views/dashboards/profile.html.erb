@@ -8,7 +8,7 @@
         <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path, class:'button' %></a>
       </div>
       <div >
-        <a href="#" class="card-link"><%= link_to "All Celebrities", celebrities_path, class:'button'  %></a>
+        <a href="#" class="card-link"><a href="#reservation" class="button"> Reservations</a>
       </div>
       <div >
         <a href="#" class="card-link"><a href="#celebrities" class="button"> My celebrities</a>
@@ -17,8 +17,7 @@
         <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
       </div>
     </div>
-
-
+        
     <div class="col-9">
       <div class="dashboard-content">
         <h2>Hello <%= current_user.first_name.capitalize%>! These are your reservations:</h2>
