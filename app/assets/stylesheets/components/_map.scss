@@ -13,13 +13,11 @@
 }
 
 .map-wrapper {
-  height: 100vh;
-  position: sticky;
-  top: 0;
+
 }
 
 #map {
-  height: 100%;
+
 }
 
 .search-bar {
@@ -31,7 +29,11 @@
 }
 
 .mapboxgl-canvas {
-  height: 100vh !important;
+
+}
+
+.mapboxgl-control-container{
+  display:none;
 }
 
 #map-button {
