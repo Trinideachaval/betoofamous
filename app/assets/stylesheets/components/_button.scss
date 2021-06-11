@@ -20,7 +20,7 @@
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
+
     display: block;
   }
 
@@ -29,3 +29,24 @@
     color: #fff;
     text-decoration: none;
   }
+
+  .map-button {background-image: linear-gradient(to right, #CB356B 0%, #BD3F32  51%, #CB356B  100%)}
+  .map-button {
+      padding: 0px 45px;
+      font-size: 18px !important;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      color: white;
+      box-shadow: 0 0 20px #eee;
+      border-radius: 10px;
+      display: block;
+    }
+
+  .map-button:hover {
+      background-position: right center; /* change the direction of the change here */
+      color: #fff;
+      text-decoration: none;
+    }
+
