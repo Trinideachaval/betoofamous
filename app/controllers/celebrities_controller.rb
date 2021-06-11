@@ -12,7 +12,6 @@ class CelebritiesController < ApplicationController
         lng: celebrity.longitude
       }
       end
-    end
     authorize @celebrities
   end
 
