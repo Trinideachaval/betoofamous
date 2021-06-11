@@ -1,8 +1,7 @@
 class DashboardsController < ApplicationController
 
 def profile
-  @reservations = Reservation.all
-
+@reservations = Reservation.all
 end
 
 end
