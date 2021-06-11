@@ -1,14 +1,14 @@
 <div class="form_container">
   <h1 class="text-center">When would you like to book? </h1>
-  <div class="container ml-5">
-
-<%= simple_form_for [ @celebrity, @reservation ] do |f| %>
-  <div class="form-group">
+  <%= simple_form_for [ @celebrity, @reservation ] do |f| %>
+  <div class="form-group m-5 p-2">
     <%= f.input :reserve_begin %>
   </div>
-  <div class="form-group">
+  <div class="form-group m-5 p-2">
     <%= f.input :reserve_end %>
   </div>
-  <%= f.submit "Submit reservation",class: 'btn button' %>
-<% end %>
 </div>
+  <div class="d-flex justify-content-center mb-5">
+    <%= f.submit "Submit reservation",class: 'btn button' %>
+  </div>
+<% end %>
