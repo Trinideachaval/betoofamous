@@ -1,6 +1,6 @@
 
 
-.container {
+.mycontainer {
   margin: auto;
   max-width: 1150px;
   min-height: 80vh;
@@ -23,7 +23,12 @@ text-align: center;
 padding: 50px;
 }
 
-
+.dashboard-content {
+  h1 {
+    text-align: left;
+    margin-bottom: 50px;
+  }
+}
 
 .nav li {
   padding: 30px;
@@ -36,3 +41,9 @@ padding: 50px;
   margin-right: auto;
 
 }
+
+.sidebar{
+  position: sticky;
+  top: 2vh;
+}
+

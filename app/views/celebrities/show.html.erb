@@ -1,5 +1,5 @@
 <div class="celebrity-photo d-flex">
-  <div class="celebrity-photo-show" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%=@celebrity.photo_url%>');">
+  <div class="celebrity-photo-show" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= cl_image_path @celebrity.photo.key, gravity: :face %>')">
   </div>
 
   <div class="celebrity-description">
@@ -39,11 +39,11 @@
         <i class="fas fa-star"></i>
         <i class="far fa-star"></i>
       </ul>
-      <p class="pl-4 text-muted">A year ago</p>
+      <p class="pl-4 text-muted"> <%= reservation&.created_at.strftime("%m/%d/%Y") %></p>
     </div>
 
     <div class="pl-3">
-      <p class="pl-4"> <%= reservation.review&.content %></p>
+      <p class="pl-4"> <%= reservation&.review&.content %></p>
     </div>
 
     <div class="d-flex mb-5">

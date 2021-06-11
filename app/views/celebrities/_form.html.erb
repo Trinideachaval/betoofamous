@@ -21,10 +21,15 @@
       <%= f.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="form-group m-5 p-2">
-      <%= f.label :photo_url %>
-      <%= f.text_area :photo_url, class: 'form-control' %>
-    </div>
+      <div class="form-group m-5 p-2">
+        <%= f.label :photo %>
+        <%= f.input :photo, as: :file, class: 'form-control' %>
+      </div>
+
+      <div class="button-center">
+        <%= f.submit class: 'button'%>
+      </div>
+    <% end %>
   </div>
 
     <div class="d-flex justify-content-center mb-5">
