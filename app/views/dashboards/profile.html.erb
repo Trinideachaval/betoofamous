@@ -17,13 +17,12 @@
         <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
       </div>
     </div>
-
-
+        
     <div class="col-9">
-      <div class="dashboard-content" id="reservation">
-        <h1>Your Reservations:</h1>
+      <div class="dashboard-content">
+        <h2>Hello <%= current_user.first_name.capitalize%>! These are your reservations:</h2>
         <% if current_user.reservations.empty? %>
-        <p> <%= "You do not have any reservation yet..." %></p>
+        <p> Hello <%= current_user.first_name.capitalize%>, you do not have any reservation yet..." </p>
         <% else %>
         <div class="cards">
           <% current_user.reservations.each do |reservation| %>
@@ -48,11 +47,11 @@
 
         <div>
           <% if current_user.celebrities.blank?  %>
-          <p class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! You do not have any celebrity yet...</p>
+          <p class="text-center mb-5" id="logo-font">You do not have any celebrity yet...</p>
           <p></p>
           <%= link_to "Create celebrity", new_celebrity_path, class:'button' %>
           <%  else %>
-          <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! These are your celebrities</h1>
+          <p class="text-center mb-5" id="logo-font">These are your celebrities</p>
           <div class="cards" id="celebrities">
             <% current_user.celebrities.each do |celebrity| %>
             <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
