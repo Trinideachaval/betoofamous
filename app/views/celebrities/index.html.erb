@@ -1,6 +1,6 @@
 
 <div class="margin-top">
-  <div class="col-8">
+  <div class="col-6">
     <div class="container">
       <h1 class="text-center mb-2" id="logo-font">Choose your favourite celebrity</h1>
     <div class="search-bar mb-3 mt-4">
@@ -38,11 +38,11 @@
       </div>
     </div>
   </div>
-  <div class="map-wrapper col-4">
+  <div class="map-wrapper">
     <div id="map"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-       style="height: 100%; position: sticky; top: 0; ">
+       style="height: 100vh; position: sticky; top: 0; width: 100%;">
     </div>
   </div>
 </div>
