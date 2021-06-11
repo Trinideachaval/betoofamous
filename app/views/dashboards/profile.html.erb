@@ -31,7 +31,7 @@
               <p> <strong>Status:</strong><%= reservation.status.capitalize %></p>
 
             </div>
-            <%= link_to "Update Reservation", edit_celebrity_reservation_path(reservation.celebrity, reservation) %>
+            <%= link_to "Update Reservation", edit_reservation_path(reservation) %>
             <br>
             <br>
           <% end %>

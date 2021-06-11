@@ -3,15 +3,16 @@
   <div class="col-8">
     <div class="container">
       <h1 class="text-center mb-2" id="logo-font">Choose your favourite celebrity</h1>
-    <div class="search-bar mb-3">
-      <%= form_tag celebrities_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Search"
-        %>
-        <%= submit_tag "Search", id: "map-button" %>
-      <% end %>
+    <div class="search-bar mb-3 mt-4">
+      <div class="searchbar-form">
+        <%= form_tag celebrities_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control border-right-0"
+          %>
+          <%= submit_tag "Search", class: "map-button border-0 rounded-left" %>
+        <% end %>
+      </div>
     </div>
       <div class="cards">
         <% @celebrities.each do |celebrity| %>
@@ -41,7 +42,7 @@
     <div id="map"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-       style="height: 100vh; position: sticky; top: 0;">
+       style="height: 100%; position: sticky; top: 0; ">
     </div>
   </div>
 </div>

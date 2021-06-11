@@ -39,11 +39,11 @@
 
 .stars {
   margin-bottom: 2px;
-  position: relative;
-  top: -5px;
-  left: 105px;
+  display: flex;
+  justify-content: center;
   font-size:8px;
   color: rgb(241, 3, 71);
+  padding:0px;
 }
 
 
