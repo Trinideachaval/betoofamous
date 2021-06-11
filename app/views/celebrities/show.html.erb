@@ -9,7 +9,7 @@
 
     <% if policy(@celebrity).edit? == false %>
     <button class="button text-center text-white">
-      <%= link_to 'Book now', celebrities_path, class: "no-deco" %>
+      <%= link_to 'Book now', new_celebrity_reservation_path(@celebrity), class: "no-deco" %>
     </button>
     <% end %>
 
