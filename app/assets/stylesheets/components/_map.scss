@@ -8,8 +8,13 @@
 }
 
 .margin-top {
-  margin: 70px;
+  margin-top: 70px;
   display: flex;
+}
+
+.mapboxgl-marker {
+  display: none;
+  transform: inherit !important;
 }
 
 
