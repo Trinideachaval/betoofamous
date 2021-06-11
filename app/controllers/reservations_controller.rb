@@ -8,8 +8,6 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
-    @celebrity = Celebrity.find(params[:celebrity_id])
-    @reservation.celebrity = @celebrity
   end
 
   def update
@@ -37,12 +35,11 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
-    @review = Review.find(params[:id])
   end
 
   private
 
   def reservation_params
-    params.require(:reservation).permit(:reserve_begin, :reserve_end, :status)
+    params.require(:reservation).permit(:reserve_begin, :reserve_end, :status, :celebrity_id)
   end
 end

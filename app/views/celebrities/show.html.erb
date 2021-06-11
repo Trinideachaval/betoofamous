@@ -8,19 +8,19 @@
     <p class="text-justify"><%= @celebrity.description %></p>
 
     <% if policy(@celebrity).edit? == false %>
-    <button class="btn-grad text-center text-white ml-0">
+    <button class="button text-center text-white ml-0">
       <%= link_to 'Book now', new_celebrity_reservation_path(@celebrity), class: "text-white" %>
     </button>
     <% end %>
 
     <% if policy(@celebrity).edit? %>
-    <button class="btn-grad text-center text-white ml-0">
+    <button class="button text-center text-white ml-0">
       <%= link_to 'Edit', edit_celebrity_path, class: "text-white" %>
     </button>
     <% end %>
 
     <% if policy(@celebrity).destroy? %>
-    <button class="btn-grad text-center text-white ml-0">
+    <button class="button text-center text-white ml-0">
       <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" },  class: "text-white" %>
     </button>
     <% end %>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="pl-3">
-      <p class="pl-4"> <%= reservation.review.content %></p>
+      <p class="pl-4"> <%= reservation.review&.content %></p>
     </div>
 
     <div class="d-flex mb-5">
@@ -54,7 +54,7 @@
 </div>
 
 <div class="d-flex justify-content-center m-5">
-  <button class="btn-grad text-center text-white">
+  <button class="button text-center text-white">
     <%= link_to 'See all celebrities', celebrities_path, class: "text-white" %>
   </button>
 </div>
