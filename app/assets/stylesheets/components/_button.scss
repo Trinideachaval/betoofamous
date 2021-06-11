@@ -1,17 +1,17 @@
-.button {
-  border-radius: 4px;
-  background-color: #bb0136;
-  padding: 13px 45px;
-  font-size: 18px !important;
-  color: white;
-  &:hover {
-    color: gray;
-  }
-}
+// .button {
+//   border-radius: 4px;
+//   background-color: #bb0136;
+//   padding: 13px 45px;
+//   font-size: 18px !important;
+//   color: white;
+//   &:hover {
+//     color: gray;
+//   }
+// }
 
 
- .btn-grad {background-image: linear-gradient(to right, #CB356B 0%, #BD3F32  51%, #CB356B  100%)}
- .btn-grad {
+ .button {background-image: linear-gradient(to right, #CB356B 0%, #BD3F32  51%, #CB356B  100%)}
+ .button {
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
@@ -24,7 +24,7 @@
     display: block;
   }
 
-  .btn-grad:hover {
+  .button:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
