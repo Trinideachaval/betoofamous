@@ -3,16 +3,16 @@ class CelebritiesController < ApplicationController
     if params[:query].present?
       @celebrities = policy_scope(Celebrity).search_name_and_description(params[:query])
     else
-      @celebrities = policy_scope(Celebrity)
+      @celebrities = Celebrity.all
     end
-
+    
     @markers = @celebrities.geocoded.map do |celebrity|
       {
         lat: celebrity.latitude,
         lng: celebrity.longitude
       }
     end
-    authorize @celebrities
+    authorize @celebrities #check if this works, was added by danny.
   end
 
   def show
