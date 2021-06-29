@@ -31,7 +31,7 @@
               <div class="card-body">
                 <div class="card-celebrity-body">
                   <div>
-                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reservation.celebrity.photo.key, crop: :fill, gravity: :face %>')">
+                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reservation.celebrity.photo_url, crop: :fill, gravity: :face %>')">
                     </div>
                     <p class="text-center logo-font my-1"><strong> <%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></strong></p>
                     <p class="text-center logo-font my-1"><strong>From:</strong>  <%= reservation.reserve_begin%></p>
