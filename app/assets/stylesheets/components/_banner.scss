@@ -7,7 +7,7 @@
   justify-content: center;
   display: flex;
   text-align: center;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("https://i.pinimg.com/564x/38/eb/3a/38eb3a17f2c75a7fb70fe8178c5f4bdc.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url("https://cdn.wallpapersafari.com/3/17/Daf6Aw.jpg");
   margin-bottom: 75px;
 }
 
@@ -24,4 +24,9 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-family: roboto;
+}
+
+.banner .search {
+  margin-left: 42%;
+  margin-right: 42%;
 }

@@ -24,8 +24,6 @@
  transition: all 0.3s;
 }
 
-
-
 .card-container {
   border-radius: 0;
 }
@@ -60,6 +58,12 @@ h3 {
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 

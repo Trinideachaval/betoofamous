@@ -1,14 +1,14 @@
 <div class="banner">
   <h1 id="logo-font">Make your dreams come true</h1>
   <p>Get to meet your idol!</p>
-  <div class="p-3">
+  <div class="search p-3">
     <%= link_to "Search", celebrities_path, class: "button", id: "logo-font-w"%>
   </div>
 </div>
 
-<div class="container col-8 p-3 my-3">
+<div class="mycontainer p-3 my-3">
   <%= render 'shared/card-seller-1'  %>
-  <div class="homepage-container">
+  <!-- <div class="homepage-container">
     <div class="card-title">
       <h2>Your celebrities</h2>
     </div>
@@ -57,10 +57,10 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
-  <div class="button-wrapper">
-    <%= link_to "See all", profile_path, class: "button" %>
+  <div class="search button-wrapper" style="display:flex; justify-content: center;" >
+    <%= link_to "See all", celebrities_path, class: "button", style:"width: 250px;"%>
   </div>
 
 </div>

@@ -1,81 +1,90 @@
-<div class="celebrity-photo d-flex">
-  <div class="card celebrity-photo-show" style="width: 18rem;">
-    <img class="card-img-top" src="/./images/logo.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h5>
+<div class="pt-5 mt-5 mycontainer">
+  <div class="d-flex">
+    <div class="card celebrity-photo-show sidebar col-3" style="width: 35rem;">
+      <div class="card-body">
+        <h5><%= current_user.first_name.capitalize  %> <%= current_user.last_name.capitalize  %></h5>
+      </div>
+      <div >
+        <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path, class:'button' %></a>
+      </div>
+      <div >
+        <a href="#" class="card-link"><a href="#reservation" class="button"> Reservations</a>
+      </div>
+      <div >
+        <a href="#" class="card-link"><a href="#celebrities" class="button"> My celebrities</a>
+      </div>
+      <div >
+        <a href="#" class="card-link"><%= link_to "Find you celebrity now", celebrities_path, class:'button' %></a>
+      </div>
     </div>
-    <div class="card-body">
-      <a href="#" class="card-link"><%= link_to "New Celebrity", new_celebrity_path %></a>
-    </div>
-    <div class="card-body">
-      <a href="#" class="card-link"><%= link_to "Reservations", new_celebrity_path %></a>
-    </div>
-    <div class="card-body">
-      <a href="#" class="card-link"><%= link_to "My celebrities", new_celebrity_path %></a>
-    </div>
-  </div>
-  <div class="celebrity-description">
-    <h1>Your Reservations:</h1>
-      <% if current_user.celebrities  %>
-        <% current_user.reservations.each do |reservation| %>
-          <div class="celebrity-description">
-            <h2><%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></h2>
-            <p>From: <%= reservation.reserve_begin%></p>
-            <p>To: <%= reservation.reserve_end%></p>
-            <strong>Status:</strong>
-            <p><%= reservation.status %></p>
+
+    <div class="col-9">
+      <div class="dashboard-content">
+        <h1>Hello <%= current_user.first_name.capitalize%>! These are your reservations:</h1>
+        <% if current_user.reservations.empty? %>
+        <p> You do not have any reservation yet... </p>
+        <% else %>
+        <div class="cards">
+          <% if current_user.reservations %>
+            <% current_user.reservations.each do |reservation| %>
+            <div class="card-container">
+              <div class="card-body">
+                <div class="card-celebrity-body">
+                  <div>
+                    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path reservation.celebrity.photo.key, crop: :fill, gravity: :face %>')">
+                    </div>
+                    <p class="text-center logo-font my-1"><strong> <%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></strong></p>
+                    <p class="text-center logo-font my-1"><strong>From:</strong>  <%= reservation.reserve_begin%></p>
+                    <p class="text-center logo-font my-1"><strong> To: </strong> <%= reservation.reserve_end%></p>
+                    <p class="text-center logo-font my-1"> <strong>Status: </strong><%= reservation.status.capitalize %></p>
+                    <!-- <p class="text-center my-1"><%#= link_to "Update Reservation", edit_reservation_path(reservation) %></p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
           </div>
-          <%= link_to "Update Reservation", edit_celebrity_reservation_path(reservation.celebrity, reservation) %>
-          <br>
-          <br>
+          <% end %>
         <% end %>
-      <% else  %>
-        <% current_user.reservations.each do |reservation| %>
-          <div class="celebrity-description">
-            <h2><%= reservation.celebrity.first_name %> <%= reservation.celebrity.last_name %></h2>
-            <p>From: <%= reservation.reserve_begin%></p>
-            <p>To: <%= reservation.reserve_end%></p>
-            <p><strong>Status:</strong><%= reservation.status %></p>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-</div>
 
-
-<% if current_user.celebrities  %>
-  <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! These are your celebrities</h1>
-  <p>Soy un manager de celebrities y puedo editar o eliminar una celebrity mediante buttons</p>
-  <%= current_user.celebrities %>
-  <%  else %>
-  <h1 class="text-center mb-5" id="logo-font">Hello <%= current_user.first_name.capitalize %>! These are your celebrities</h1>
-<% end %>
-
-<div class="col-8 pt-5 mt-5 container">
-  <div class="cards">
-    <% current_user.celebrities.each do |celebrity| %>
-    <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
-    <div class="celebrity-conteiner">
-      <div class="card-celebrity-body">
         <div>
-          <div class="card-celebrity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= celebrity.photo_url %>)"></div>
-          <p class="text-center logo-font my-1 no-deco"><%= "#{celebrity.first_name} #{celebrity.last_name}" %></p>
-          <p class="text-center my-1 no-deco">150€/hour</p>
-          <ul class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </ul>
+          <% if current_user.celebrities.blank?  %>
+          <p class="text-center mb-5" id="logo-font">You do not have any celebrity yet...</p>
+          <p></p>
+          <%= link_to "Create celebrity", new_celebrity_path, class:'button' %>
+          <%  else %>
+          <p class="text-center mb-5" id="logo-font">These are your celebrities</p>
+          <div class="cards" id="celebrities">
+            <% if current_user.celebrities %>
+              <% current_user.celebrities.each do |celebrity| %>
+              <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
+              <div class="celebrity-conteiner">
+                <div class="card-celebrity-body">
+                  <div>
+                    <div class="card-celebrity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path celebrity.photo.key, crop: :fill, gravity: :face %>')"></div>
+                    <p class="text-center logo-font my-1 no-deco"><%= "#{celebrity.first_name} #{celebrity.last_name}" %></p>
+                    <p class="text-center my-1 no-deco">150€/hour</p>
+                    <ul class="stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          <% end %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <% end %>
-    <% end %>
   </div>
 </div>
-</div>
+
 
 
 

@@ -5,12 +5,14 @@ class CelebritiesController < ApplicationController
     else
       @celebrities = Celebrity.all
     end
-      @markers = @celebrities.geocoded.map do |celebrity|
-        {
-          lat: celebrity.latitude,
-          lng: celebrity.longitude
-        }
-      end
+    
+    @markers = @celebrities.geocoded.map do |celebrity|
+      {
+        lat: celebrity.latitude,
+        lng: celebrity.longitude
+      }
+    end
+    authorize @celebrities #check if this works, was added by danny.
   end
 
   def show
@@ -28,7 +30,7 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.new(celebrity_params)
     @celebrity.user = current_user
     if @celebrity.save
-      redirect_to celebrity_path(@celebrity)
+      redirect_to profile_path
     else
       render :new
     end
@@ -49,7 +51,6 @@ class CelebritiesController < ApplicationController
       render :new
     end
     authorize @celebrity
-    raise
   end
 
   def destroy
@@ -62,6 +63,6 @@ class CelebritiesController < ApplicationController
   private
 
   def celebrity_params
-    params.require(:celebrity).permit(:first_name, :last_name, :address, :description, :photo_url)
+    params.require(:celebrity).permit(:first_name, :last_name, :address, :description, :photo)
   end
 end
