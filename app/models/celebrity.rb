@@ -3,7 +3,7 @@ class Celebrity < ApplicationRecord
   belongs_to :user
   has_many :reservations
   has_one_attached :photo
-  # debería existir la línea "has_many :reviews, through: :reservations"
+  #TODO: Verificar? => debería existir la línea "has_many :reviews, through: :reservations"
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true
