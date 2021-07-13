@@ -1,55 +1,55 @@
 <div class="celebrity-photo d-flex">
-  <div class="celebrity-photo-show" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= cl_image_path @celebrity.photo_url, gravity: :face %>')">
-  </div>
+  <a><%= cl_image_tag @celebrity.photo.key, height: 300, width: 400, crop: :fill %></a>
+</div>
 
-  <div class="celebrity-description">
-    <h1 class="mb-5"><%=@celebrity.first_name%> <%=@celebrity.last_name%></h1>
-    <p><%=@celebrity.address %></p>
-    <p class="text-justify"><%= @celebrity.description %></p>
-
-    <% if policy(@celebrity).edit? == false %>
-    <button class="button text-center text-white ml-0">
-      <%= link_to 'Book now', new_celebrity_reservation_path(@celebrity), class: "text-white" %>
-    </button>
-    <% end %>
-
-    <% if policy(@celebrity).edit? %>
-    <button class="button text-center text-white ml-0">
-      <%= link_to 'Edit', edit_celebrity_path, class: "text-white" %>
-    </button>
-    <% end %>
-
-    <% if policy(@celebrity).destroy? %>
-    <button class="button text-center text-white ml-0">
-      <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" },  class: "text-white" %>
-    </button>
-    <% end %>
-
-  </div>
+<div class="celebrity-description">
+  <h1 class="mb-5"><%=@celebrity.first_name%> <%=@celebrity.last_name%></h1>
+  <p><%=@celebrity.address %></p>
+  <p class="text-justify"><%= @celebrity.description %></p>
+  
+  <% if policy(@celebrity).edit? == false %>
+  <button class="button text-center text-white ml-0">
+    <%= link_to 'Book now', new_celebrity_reservation_path(@celebrity), class: "text-white" %>
+  </button>
+  <% end %>
+  
+  <% if policy(@celebrity).edit? %>
+  <button class="button text-center text-white ml-0">
+    <%= link_to 'Edit', edit_celebrity_path, class: "text-white" %>
+  </button>
+  <% end %>
+  
+  <% if policy(@celebrity).destroy? %>
+  <button class="button text-center text-white ml-0">
+    <%= link_to 'Delete', celebrity_path(@celebrity), method: :delete, data: { confirm: "Proceed?" },  class: "text-white" %>
+  </button>
+  <% end %>
+  
+</div>
 </div>
 
 <h2 class="review-show-celebrity">Reviews</h2>
 <div class="reservations-in-show-celebrity">
   <% @reservations.each do |reservation| %>
-    <div class="d-flex">
-      <ul class="stars-for-show-celebrity">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-      </ul>
-      <p class="pl-4 text-muted"> <%= reservation&.created_at.strftime("%m/%d/%Y") %></p>
-    </div>
-
-    <div class="pl-3">
-      <p class="pl-4"> <%= reservation&.review&.content %></p>
-    </div>
-
-    <div class="d-flex mb-5">
-      <i class="far fa-thumbs-up pl-5"></i>
-      <p class="pl-4 text-muted">Like</p>
-    </div>
+  <div class="d-flex">
+    <ul class="stars-for-show-celebrity">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </ul>
+    <p class="pl-4 text-muted"> <%= reservation&.created_at.strftime("%m/%d/%Y") %></p>
+  </div>
+  
+  <div class="pl-3">
+    <p class="pl-4"> <%= reservation&.review&.content %></p>
+  </div>
+  
+  <div class="d-flex mb-5">
+    <i class="far fa-thumbs-up pl-5"></i>
+    <p class="pl-4 text-muted">Like</p>
+  </div>
   <% end %>
 </div>
 

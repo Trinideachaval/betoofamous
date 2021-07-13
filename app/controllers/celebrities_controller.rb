@@ -12,7 +12,7 @@ class CelebritiesController < ApplicationController
         lng: celebrity.longitude
       }
     end
-    authorize @celebrities #check if this works, was added by danny.
+    authorize @celebrities #TODO: check if this works, was added by danny.
   end
 
   def show

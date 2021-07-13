@@ -5,11 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 Review.destroy_all
 Reservation.destroy_all
 Celebrity.destroy_all
 User.destroy_all
+
+bft = User.new(
+  email: 'bft@email.com',
+  first_name: 'Team',
+  last_name: 'BeFamousToo',
+  password: '123456'
+)
 
 10.times do
   user = User.new(
@@ -26,9 +34,11 @@ end
     last_name: Faker::Name.last_name,
     address: Faker::Address.city, #city no existe en la base de datos
     description: Faker::Demographic.race,
-    photo_url: 'https://picsum.photos/200/300',
-    user_id: User.all.sample.id
-  )
+    user_id: User.all.sample.id)
+ 
+  photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Michael_Jackson_in_1988.jpg/220px-Michael_Jackson_in_1988.jpg')
+  Celebrity.last.photo.attach(io: photo, filename: '220px-Michael_Jackson_in_1988.jpg', content_type: 'image/jpg')
+  
   celebrity.save(validate: false)
 end
 
