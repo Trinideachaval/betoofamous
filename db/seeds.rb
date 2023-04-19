@@ -8,39 +8,50 @@
 require "open-uri"
 
 Review.destroy_all
-Reservation.destroy_all
-Celebrity.destroy_all
-User.destroy_all
+puts "Destroy all reviews"
 
-bft = User.new(
+Reservation.destroy_all
+puts "Destroy all reservations"
+
+Celebrity.destroy_all
+puts "Destroy all celebrities"
+
+User.destroy_all
+puts "Destroy all users"
+
+# Create user Be Famous Too
+bft = User.create(
   email: 'bft@email.com',
   first_name: 'Team',
   last_name: 'BeFamousToo',
   password: '123456'
 )
+puts "Create user: Team BeFamousToo / password: 123456"
 
+# Create 10 random users 
 10.times do
-  user = User.new(
+  user = User.create(
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
-  )
-  user.save(validate: false)
-end
-
-10.times do
-  celebrity = Celebrity.new(
-    first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    address: Faker::Address.city, #city no existe en la base de datos
-    description: Faker::Demographic.race,
-    user_id: User.all.sample.id)
- 
-  photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Michael_Jackson_in_1988.jpg/220px-Michael_Jackson_in_1988.jpg')
-  Celebrity.last.photo.attach(io: photo, filename: '220px-Michael_Jackson_in_1988.jpg', content_type: 'image/jpg')
-  
-  celebrity.save(validate: false)
+    password: '654321'
+  )
 end
+puts "Create 10 faker users"
+
+# Create celebirities 
+# Michael Jackson
+michael = Celebrity.new(
+  user: bft,
+  first_name: 'Michael',
+  last_name: 'Jackson',
+  address: 'Barcelona, España',
+  description: 'Great singer from the `80s. Brought to you by our exclusive patented ResurrectTech.',
+  )
+photo = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Michael_Jackson_in_1988.jpg/220px-Michael_Jackson_in_1988.jpg')
+michael.photo.attach(io: photo, filename: '220px-Michael_Jackson_in_1988.jpg', content_type: 'image/jpg')
+michael.save(validate: false)  
+puts "Create Celebrity - Michael"
 
 statux = ['confirmed', 'pending']
 10.times do
@@ -53,6 +64,7 @@ statux = ['confirmed', 'pending']
   )
   reservation.save(validate: false)
 end
+puts "Create 10 faker reservations"
 
 10.times do
   review = Review.new(
@@ -62,3 +74,6 @@ end
   )
   review.save(validate: false)
 end
+puts "Create 10 faker reviews"
+
+puts "Seeds ok 100%"
